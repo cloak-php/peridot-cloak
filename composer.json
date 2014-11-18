@@ -9,6 +9,11 @@
     "require-dev": {
         "expectation/peridot-expectation": "1.1.1.1"
     },
+    "autoload" : {
+        "psr-4": {
+            "cloak\\peridot\\" : "src/"
+        }
+    },
     "license": "MIT",
     "authors": [
         {
@@ -16,5 +21,8 @@
             "email": "holy.shared.design@gmail.com"
         }
     ],
+    "scripts": {
+        "test": "vendor/bin/peridot spec"
+    },
     "minimum-stability": "stable"
 }
