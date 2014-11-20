@@ -16,6 +16,8 @@ use Peridot\Console\Environment;
 use Peridot\Console\Application;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use cloak\configuration\ConfigurationLoader;
+use cloak\Analyzer;
 
 
 /**
@@ -26,11 +28,31 @@ class CloakPlugin implements RegistrarInterface
 {
 
     /**
+     * @var \cloak\Analyzer
+     */
+    private $analyzer;
+
+
+    /**
+     * @param Analyzer $analyzer
+     */
+    public function __construct(Analyzer $analyzer)
+    {
+        $this->analyzer = $analyzer;
+    }
+
+    /**
+     * @param string $configurationFile
      * @return CloakPlugin
      */
-    public static function create()
+    public static function create($configurationFile)
     {
-        return new self();
+        $loader = new ConfigurationLoader();
+        $configuration = $loader->loadConfiguration($configurationFile);
+
+        $analyzer = new Analyzer($configuration);
+
+        return new self($analyzer);
     }
 
     /**
@@ -47,6 +69,7 @@ class CloakPlugin implements RegistrarInterface
      */
     public function onPeridotStart(Environment $env, Application $application)
     {
+        $this->analyzer->start();
     }
 
     /**
@@ -54,6 +77,7 @@ class CloakPlugin implements RegistrarInterface
      */
     public function onPeridotEnd($exitCode, InputInterface $input, OutputInterface $output)
     {
+        $this->analyzer->stop();
     }
 
 }

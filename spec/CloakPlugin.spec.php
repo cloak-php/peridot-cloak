@@ -6,10 +6,11 @@ use Evenement\EventEmitter;
 
 
 describe('CloakPlugin', function() {
+    beforeEach(function() {
+        $this->configFile = __DIR__ . '/../fixture/cloak.toml';
+        $this->plugin = CloakPlugin::create($this->configFile);
+    });
     describe('#create', function() {
-        beforeEach(function() {
-            $this->plugin = CloakPlugin::create();
-        });
         it('returns cloak\peridot\CloakPlugin instance', function() {
             expect($this->plugin)->toBeAnInstanceOf('cloak\peridot\CloakPlugin');
         });
@@ -17,7 +18,6 @@ describe('CloakPlugin', function() {
     describe('#register', function() {
         beforeEach(function() {
             $this->emitter = new EventEmitter();
-            $this->plugin = CloakPlugin::create();
             $this->plugin->register($this->emitter);
             $this->startListeners = $this->emitter->listeners(Registrar::START_EVENT);
             $this->endListeners = $this->emitter->listeners(Registrar::END_EVENT);
