@@ -1,0 +1,21 @@
+[target]
+
+# Include source files.
+includes = ["src"]
+
+# Exclude source files.
+excludes = ["vendor", "spec"]
+
+[reporter]
+
+# TreeReporter
+[reporter.tree]
+highLowerBound = 70.0
+lowUpperBound = 35.0
+
+# LcovReporter
+[reporter.lcov]
+outputFilePath = "tmp/report.lcov"
+
+# ProcessingTimeReporter
+[reporter.processingTime]
