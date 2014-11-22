@@ -15,10 +15,10 @@ describe('CloakPlugin', function() {
             expect($this->plugin)->toBeAnInstanceOf('cloak\peridot\CloakPlugin');
         });
     });
-    describe('#register', function() {
+    describe('#registerTo', function() {
         beforeEach(function() {
             $this->emitter = new EventEmitter();
-            $this->plugin->register($this->emitter);
+            $this->plugin->registerTo($this->emitter);
             $this->startListeners = $this->emitter->listeners(Registrar::START_EVENT);
             $this->endListeners = $this->emitter->listeners(Registrar::END_EVENT);
         });

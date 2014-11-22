@@ -58,7 +58,7 @@ class CloakPlugin implements RegistrarInterface
     /**
      * {@inheritdoc}
      */
-    public function register(EventEmitterInterface $emitter)
+    public function registerTo(EventEmitterInterface $emitter)
     {
         $emitter->on(self::START_EVENT, [$this, 'onPeridotStart']);
         $emitter->on(self::END_EVENT, [$this, 'onPeridotEnd']);

@@ -7,5 +7,5 @@ use cloak\peridot\CloakPlugin;
 return function(EventEmitterInterface $emitter)
 {
     ExpectationPlugin::create()->register($emitter);
-    CloakPlugin::create('cloak.toml')->register($emitter);
+    CloakPlugin::create('cloak.toml')->registerTo($emitter);
 };
