@@ -7,7 +7,7 @@ use Evenement\EventEmitter;
 
 describe('CloakPlugin', function() {
     beforeEach(function() {
-        $this->configFile = __DIR__ . '/../fixture/cloak.toml';
+        $this->configFile = __DIR__ . '/fixture/cloak.toml';
         $this->plugin = CloakPlugin::create($this->configFile);
     });
     describe('#create', function() {

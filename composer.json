@@ -9,7 +9,7 @@
     "require-dev": {
         "cloak/coverallskit": "~1.3",
         "codegyre/robo": "~0.4",
-        "expectation/peridot-expectation": "~1.1.1"
+        "expectation/peridot-expectation": "~1.2"
     },
     "autoload" : {
         "psr-4": {
