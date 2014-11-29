@@ -20,7 +20,7 @@ Then please run the composer install.
 ```php
 {
     "require-dev": {
-        "cloak/peridot-cloak": "1.0.0"
+        "cloak/peridot-cloak": "1.0.1"
     }
 }
 ```

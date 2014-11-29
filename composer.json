@@ -3,13 +3,12 @@
     "keywords": ["peridot", "peridot-plugin", "code coverage", "lcov report", "markdown report", "text report"],
     "require": {
         "cloak/cloak": "~1.4",
-        "peridot-php/peridot": "~1.8",
-        "noodlehaus/config": "dev-master"
+        "peridot-php/peridot": "~1.8"
     },
     "require-dev": {
         "cloak/coverallskit": "~1.3",
         "codegyre/robo": "~0.4",
-        "expectation/peridot-expectation": "~1.1.1"
+        "expectation/peridot-expectation": "~1.2"
     },
     "autoload" : {
         "psr-4": {
