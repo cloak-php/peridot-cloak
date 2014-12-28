@@ -3,6 +3,8 @@ peridot-cloak
 
 Cloak for [peridot](http://peridot-php.github.io/)
 
+[![Latest Stable Version](https://poser.pugx.org/leaphly/cart-bundle/version.svg)](https://packagist.org/packages/leaphly/cart-bundle) [![Latest Unstable Version](https://poser.pugx.org/leaphly/cart-bundle/v/unstable.svg)](//packagist.org/packages/leaphly/cart-bundle) [![Total Downloads](https://poser.pugx.org/leaphly/cart-bundle/downloads.svg)](https://packagist.org/packages/leaphly/cart-bundle)
+
 [![Build Status](https://travis-ci.org/cloak-php/peridot-cloak.svg?branch=master)](https://travis-ci.org/cloak-php/peridot-cloak)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/cloak-php/peridot-cloak/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/cloak-php/peridot-cloak/?branch=master)
 [![Coverage Status](https://coveralls.io/repos/cloak-php/peridot-cloak/badge.png?branch=master)](https://coveralls.io/r/cloak-php/peridot-cloak?branch=master)
