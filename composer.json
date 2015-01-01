@@ -8,7 +8,8 @@
     "require-dev": {
         "codegyre/robo": "~0.4",
         "cloak/robo-coveralls-kit": "~1.0",
-        "expectation/peridot-expectation": "~1.2"
+        "expectation/peridot-expectation": "~1.2",
+        "robo-peridot/robo-peridot": "~1.0"
     },
     "autoload" : {
         "psr-4": {
