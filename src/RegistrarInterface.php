@@ -25,8 +25,8 @@ use Symfony\Component\Console\Output\OutputInterface;
 interface RegistrarInterface
 {
 
-    const START_EVENT = 'peridot.start';
-    const END_EVENT = 'peridot.end';
+    const START_EVENT = 'runner.start';
+    const END_EVENT = 'runner.end';
 
 
     /**
