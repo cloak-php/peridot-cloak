@@ -3,6 +3,12 @@
 use cloak\peridot\CloakPlugin;
 use cloak\peridot\RegistrarInterface as Registrar;
 use Evenement\EventEmitter;
+use Peridot\Console\Environment;
+use Peridot\Console\InputDefinition;
+use Peridot\Console\Application;
+use Symfony\Component\Console\Input\ArgvInput;
+use Symfony\Component\Console\Output\NullOutput;
+use Prophecy\Prophet;
 
 
 describe('CloakPlugin', function() {
@@ -27,6 +33,43 @@ describe('CloakPlugin', function() {
         });
         it('register end event', function() {
             expect(count($this->endListeners))->toEqual(1);
+        });
+    });
+    describe('#onPeridotStart', function() {
+        beforeEach(function() {
+            $this->prophet = new Prophet();
+            $analyzer = $this->prophet->prophesize('cloak\AnalyzerInterface');
+
+            $this->plugin = new CloakPlugin($analyzer->reveal());
+            $analyzer->start()->shouldBeCalled();
+            $analyzer->stop()->shouldNotBeCalled();
+            $analyzer->isStarted()->shouldNotBeCalled();
+            $analyzer->getResult()->shouldNotBeCalled();
+
+            $emitter = new EventEmitter();
+            $this->environment = new Environment(new InputDefinition, $emitter, []);
+            $this->application = new Application($this->environment);
+        });
+        it('analyze start', function() {
+            $this->plugin->onPeridotStart($this->environment, $this->application);
+            $this->prophet->checkPredictions();
+        });
+    });
+    describe('#onPeridotEnd', function() {
+        beforeEach(function() {
+            $this->prophet = new Prophet();
+            $analyzer = $this->prophet->prophesize('cloak\AnalyzerInterface');
+
+            $this->plugin = new CloakPlugin($analyzer->reveal());
+
+            $analyzer->start()->shouldNotBeCalled();
+            $analyzer->stop()->shouldBeCalled();
+            $analyzer->isStarted()->shouldNotBeCalled();
+            $analyzer->getResult()->shouldNotBeCalled();
+        });
+        it('analyze stop', function() {
+            $this->plugin->onPeridotEnd(0, new ArgvInput([]), new NullOutput());
+            $this->prophet->checkPredictions();
         });
     });
 });

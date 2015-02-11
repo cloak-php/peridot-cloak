@@ -10,8 +10,8 @@ excludes = ["vendor", "spec"]
 reportDirectory = "./tmp"
 
 [report.coverageBounds]
-satisfactory = 80.0
 critical = 50.0
+satisfactory = 80.0
 
 [reporter]
 
