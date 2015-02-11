@@ -17,6 +17,7 @@ use Peridot\Console\Application;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use cloak\configuration\ConfigurationLoader;
+use cloak\AnalyzerInterface;
 use cloak\Analyzer;
 
 
@@ -28,15 +29,15 @@ class CloakPlugin implements RegistrarInterface
 {
 
     /**
-     * @var \cloak\Analyzer
+     * @var \cloak\AnalyzerInterface
      */
     private $analyzer;
 
 
     /**
-     * @param Analyzer $analyzer
+     * @param AnalyzerInterface $analyzer
      */
-    public function __construct(Analyzer $analyzer)
+    public function __construct(AnalyzerInterface $analyzer)
     {
         $this->analyzer = $analyzer;
     }

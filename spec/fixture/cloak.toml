@@ -6,12 +6,14 @@ includes = ["src"]
 # Exclude source files.
 excludes = ["vendor", "spec"]
 
+[report.coverageBounds]
+satisfactory = 80.0
+critical = 50.0
+
 [reporter]
 
 # TreeReporter
 [reporter.tree]
-highLowerBound = 70.0
-lowUpperBound = 35.0
 
 # ProcessingTimeReporter
 [reporter.processingTime]
