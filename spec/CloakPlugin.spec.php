@@ -40,10 +40,6 @@ describe('CloakPlugin', function() {
             $analyzer->stop()->shouldNotBeCalled();
             $analyzer->isStarted()->shouldNotBeCalled();
             $analyzer->getResult()->shouldNotBeCalled();
-
-            $emitter = new EventEmitter();
-//            $this->environment = new Environment(new InputDefinition, $emitter, []);
-  //          $this->application = new Application($this->environment);
         });
         it('analyze start', function() {
             $this->plugin->onRunnerStart();
