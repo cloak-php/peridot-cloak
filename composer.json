@@ -3,7 +3,7 @@
     "keywords": ["peridot", "peridot-plugin", "code coverage", "lcov report", "markdown report", "text report"],
     "require": {
         "cloak/cloak": "~1.5",
-        "peridot-php/peridot": "~1.12"
+        "peridot-php/peridot": "~1.14"
     },
     "require-dev": {
         "codegyre/robo": "~0.5",
