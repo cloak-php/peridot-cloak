@@ -12,10 +12,6 @@
 namespace cloak\peridot;
 
 use Evenement\EventEmitterInterface;
-use Peridot\Console\Environment;
-use Peridot\Console\Application;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
 use cloak\configuration\ConfigurationLoader;
 use cloak\AnalyzerInterface;
 use cloak\Analyzer;
@@ -61,14 +57,14 @@ class CloakPlugin implements RegistrarInterface
      */
     public function registerTo(EventEmitterInterface $emitter)
     {
-        $emitter->on(self::START_EVENT, [$this, 'onPeridotStart']);
-        $emitter->on(self::END_EVENT, [$this, 'onPeridotEnd']);
+        $emitter->on(self::START_EVENT, [ $this, 'onRunnerStart' ]);
+        $emitter->on(self::END_EVENT, [ $this, 'onRunnerEnd' ]);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function onPeridotStart(Environment $env, Application $application)
+    public function onRunnerStart()
     {
         $this->analyzer->start();
     }
@@ -76,7 +72,7 @@ class CloakPlugin implements RegistrarInterface
     /**
      * {@inheritdoc}
      */
-    public function onPeridotEnd($exitCode, InputInterface $input, OutputInterface $output)
+    public function onRunnerEnd($processingTime)
     {
         $this->analyzer->stop();
     }

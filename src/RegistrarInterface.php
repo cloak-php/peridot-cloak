@@ -35,16 +35,12 @@ interface RegistrarInterface
     public function registerTo(EventEmitterInterface $emitter);
 
     /**
-     * @param Environment $env
-     * @param Application $application
      */
-    public function onPeridotStart(Environment $env, Application $application);
+    public function onRunnerStart();
 
     /**
-     * @param int $exitCode
-     * @param InputInterface $input
-     * @param OutputInterface $output
+     * @param float $processingTime
      */
-    public function onPeridotEnd($exitCode, InputInterface $input, OutputInterface $output);
+    public function onRunnerEnd($processingTime);
 
 }

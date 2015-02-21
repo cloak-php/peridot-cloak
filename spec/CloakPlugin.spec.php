@@ -3,11 +3,6 @@
 use cloak\peridot\CloakPlugin;
 use cloak\peridot\RegistrarInterface as Registrar;
 use Evenement\EventEmitter;
-use Peridot\Console\Environment;
-use Peridot\Console\InputDefinition;
-use Peridot\Console\Application;
-use Symfony\Component\Console\Input\ArgvInput;
-use Symfony\Component\Console\Output\NullOutput;
 use Prophecy\Prophet;
 
 
@@ -35,7 +30,7 @@ describe('CloakPlugin', function() {
             expect(count($this->endListeners))->toEqual(1);
         });
     });
-    describe('#onPeridotStart', function() {
+    describe('#onRunnerStart', function() {
         beforeEach(function() {
             $this->prophet = new Prophet();
             $analyzer = $this->prophet->prophesize('cloak\AnalyzerInterface');
@@ -47,15 +42,15 @@ describe('CloakPlugin', function() {
             $analyzer->getResult()->shouldNotBeCalled();
 
             $emitter = new EventEmitter();
-            $this->environment = new Environment(new InputDefinition, $emitter, []);
-            $this->application = new Application($this->environment);
+//            $this->environment = new Environment(new InputDefinition, $emitter, []);
+  //          $this->application = new Application($this->environment);
         });
         it('analyze start', function() {
-            $this->plugin->onPeridotStart($this->environment, $this->application);
+            $this->plugin->onRunnerStart();
             $this->prophet->checkPredictions();
         });
     });
-    describe('#onPeridotEnd', function() {
+    describe('#onRunnerEnd', function() {
         beforeEach(function() {
             $this->prophet = new Prophet();
             $analyzer = $this->prophet->prophesize('cloak\AnalyzerInterface');
@@ -68,7 +63,7 @@ describe('CloakPlugin', function() {
             $analyzer->getResult()->shouldNotBeCalled();
         });
         it('analyze stop', function() {
-            $this->plugin->onPeridotEnd(0, new ArgvInput([]), new NullOutput());
+            $this->plugin->onRunnerEnd(0.9);
             $this->prophet->checkPredictions();
         });
     });
