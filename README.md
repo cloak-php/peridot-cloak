@@ -14,18 +14,13 @@ Cloak for [peridot](http://peridot-php.github.io/)
 Installation
 ------------------
 
-Installation that uses the composer
+Installation that uses the composer.
 
-Please add the following items to composer.json.  
-Then please run the composer install.
+1. Install the [composer](https://getcomposer.org/).
+2. Install the cloak.
 
-```php
-{
-    "require-dev": {
-        "cloak/peridot-cloak": "1.0.1"
-    }
-}
-```
+	composer require cloak/peridot-cloak:1.1.1 --dev
+
 
 Basic usage
 ------------------
