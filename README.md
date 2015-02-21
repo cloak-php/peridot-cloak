@@ -19,7 +19,7 @@ Installation that uses the composer.
 1. Install the [composer](https://getcomposer.org/).
 2. Install the cloak.
 
-	composer require cloak/peridot-cloak:1.1.1 --dev
+		composer require cloak/peridot-cloak:1.1.1 --dev
 
 
 Basic usage
