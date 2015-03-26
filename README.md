@@ -1,7 +1,7 @@
-peridot-cloak
+peridot-cloak-plugin
 ==========================
 
-Cloak for [peridot](http://peridot-php.github.io/)
+Cloak for [peridot-php](http://peridot-php.github.io/)
 
 [![Latest Stable Version](https://poser.pugx.org/cloak/peridot-cloak/v/stable.svg)](https://packagist.org/packages/cloak/peridot-cloak) [![Total Downloads](https://poser.pugx.org/cloak/peridot-cloak/downloads.svg)](https://packagist.org/packages/cloak/peridot-cloak) [![Latest Unstable Version](https://poser.pugx.org/cloak/peridot-cloak/v/unstable.svg)](https://packagist.org/packages/cloak/peridot-cloak) [![License](https://poser.pugx.org/cloak/peridot-cloak/license.svg)](https://packagist.org/packages/cloak/peridot-cloak)
 
