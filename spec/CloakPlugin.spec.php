@@ -3,6 +3,7 @@
 use cloak\peridot\CloakPlugin;
 use cloak\peridot\RegistrarInterface as Registrar;
 use Evenement\EventEmitter;
+use Prophecy\Prophet;
 
 
 describe('CloakPlugin', function() {
@@ -27,6 +28,39 @@ describe('CloakPlugin', function() {
         });
         it('register end event', function() {
             expect(count($this->endListeners))->toEqual(1);
+        });
+    });
+    describe('#onRunnerStart', function() {
+        beforeEach(function() {
+            $this->prophet = new Prophet();
+            $analyzer = $this->prophet->prophesize('cloak\AnalyzerInterface');
+
+            $this->plugin = new CloakPlugin($analyzer->reveal());
+            $analyzer->start()->shouldBeCalled();
+            $analyzer->stop()->shouldNotBeCalled();
+            $analyzer->isStarted()->shouldNotBeCalled();
+            $analyzer->getResult()->shouldNotBeCalled();
+        });
+        it('analyze start', function() {
+            $this->plugin->onRunnerStart();
+            $this->prophet->checkPredictions();
+        });
+    });
+    describe('#onRunnerEnd', function() {
+        beforeEach(function() {
+            $this->prophet = new Prophet();
+            $analyzer = $this->prophet->prophesize('cloak\AnalyzerInterface');
+
+            $this->plugin = new CloakPlugin($analyzer->reveal());
+
+            $analyzer->start()->shouldNotBeCalled();
+            $analyzer->stop()->shouldBeCalled();
+            $analyzer->isStarted()->shouldNotBeCalled();
+            $analyzer->getResult()->shouldNotBeCalled();
+        });
+        it('analyze stop', function() {
+            $this->plugin->onRunnerEnd(0.9);
+            $this->prophet->checkPredictions();
         });
     });
 });
