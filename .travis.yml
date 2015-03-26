@@ -5,9 +5,9 @@ php:
   - 5.4
   - hhvm
   - hhvm-nightly
-before_install:
-  - composer self-update
-  - composer install
+before_script:
+  - travis_retry composer self-update
+  - travis_retry composer install --no-interaction --prefer-source --dev
 script:
   - composer test
 after_script:
@@ -16,3 +16,5 @@ matrix:
   fast_finish: true
   allow_failures:
     - php: hhvm-nightly
+notifications:
+  email: false
