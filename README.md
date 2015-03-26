@@ -3,12 +3,13 @@ peridot-cloak-plugin
 
 Cloak for [peridot-php](http://peridot-php.github.io/)
 
-[![Latest Stable Version](https://poser.pugx.org/cloak/peridot-cloak/v/stable.svg)](https://packagist.org/packages/cloak/peridot-cloak) [![Total Downloads](https://poser.pugx.org/cloak/peridot-cloak/downloads.svg)](https://packagist.org/packages/cloak/peridot-cloak) [![Latest Unstable Version](https://poser.pugx.org/cloak/peridot-cloak/v/unstable.svg)](https://packagist.org/packages/cloak/peridot-cloak) [![License](https://poser.pugx.org/cloak/peridot-cloak/license.svg)](https://packagist.org/packages/cloak/peridot-cloak)
+[![Latest Stable Version](https://poser.pugx.org/cloak/peridot-cloak-plugin/v/stable.svg)](https://packagist.org/packages/cloak/peridot-cloak-plugin)
+[![Latest Unstable Version](https://poser.pugx.org/cloak/peridot-cloak-plugin/v/unstable.svg)](https://packagist.org/packages/cloak/peridot-cloak-plugin) [![License](https://poser.pugx.org/cloak/peridot-cloak-plugin/license.svg)](https://packagist.org/packages/cloak/peridot-cloak-plugin)
 
-[![Build Status](https://travis-ci.org/cloak-php/peridot-cloak.svg?branch=master)](https://travis-ci.org/cloak-php/peridot-cloak)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/cloak-php/peridot-cloak/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/cloak-php/peridot-cloak/?branch=master)
-[![Coverage Status](https://coveralls.io/repos/cloak-php/peridot-cloak/badge.png?branch=master)](https://coveralls.io/r/cloak-php/peridot-cloak?branch=master)
-[![Dependency Status](https://www.versioneye.com/user/projects/54702dbf9dcf6ddad5000945/badge.svg?style=flat)](https://www.versioneye.com/user/projects/54702dbf9dcf6ddad5000945)
+[![Build Status](https://travis-ci.org/cloak-php/peridot-cloak-plugin.svg?branch=master)](https://travis-ci.org/cloak-php/peridot-cloak-plugin)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/cloak-php/peridot-cloak-plugin/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/cloak-php/peridot-cloak-plugin/?branch=master)
+[![Coverage Status](https://coveralls.io/repos/cloak-php/peridot-cloak-plugin/badge.png?branch=master)](https://coveralls.io/r/cloak-php/peridot-cloak-plugin?branch=master)
+[![Dependency Status](https://www.versioneye.com/user/projects/5513fe99df7e7b09ef000515/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5513fe99df7e7b09ef000515)
 
 
 Installation
@@ -19,7 +20,7 @@ Installation that uses the composer.
 1. Install the [composer](https://getcomposer.org/).
 2. Install the package.
 
-		composer require cloak/peridot-cloak:1.1.2 --dev
+		composer require cloak/peridot-cloak-plugin:1.1.2 --dev
 
 
 Basic usage
