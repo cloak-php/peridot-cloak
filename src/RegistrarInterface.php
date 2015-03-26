@@ -8,26 +8,21 @@
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
-
 namespace cloak\peridot;
 
 use Evenement\EventEmitterInterface;
-use Peridot\Console\Environment;
 use Peridot\Console\Application;
+use Peridot\Console\Environment;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-
 /**
  * Interface RegistrarInterface
- * @package cloak\peridot
  */
 interface RegistrarInterface
 {
-
     const START_EVENT = 'runner.start';
     const END_EVENT = 'runner.end';
-
 
     /**
      * @param EventEmitterInterface $emitter
@@ -42,5 +37,4 @@ interface RegistrarInterface
      * @param float $processingTime
      */
     public function onRunnerEnd($processingTime);
-
 }

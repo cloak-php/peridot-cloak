@@ -8,27 +8,22 @@
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
-
 namespace cloak\peridot;
 
-use Evenement\EventEmitterInterface;
-use cloak\configuration\ConfigurationLoader;
-use cloak\AnalyzerInterface;
 use cloak\Analyzer;
-
+use cloak\AnalyzerInterface;
+use cloak\configuration\ConfigurationLoader;
+use Evenement\EventEmitterInterface;
 
 /**
  * Class CloakPlugin
- * @package cloak\peridot
  */
 class CloakPlugin implements RegistrarInterface
 {
-
     /**
      * @var \cloak\AnalyzerInterface
      */
     private $analyzer;
-
 
     /**
      * @param AnalyzerInterface $analyzer
@@ -40,6 +35,7 @@ class CloakPlugin implements RegistrarInterface
 
     /**
      * @param string $configurationFile
+     *
      * @return CloakPlugin
      */
     public static function create($configurationFile)
@@ -76,5 +72,4 @@ class CloakPlugin implements RegistrarInterface
     {
         $this->analyzer->stop();
     }
-
 }
