@@ -7,7 +7,7 @@ includes = ["src"]
 excludes = ["vendor", "spec"]
 
 [report]
-reportDirectory = "./tmp"
+reportDirectory = "."
 
 [report.coverageBounds]
 critical = 50.0

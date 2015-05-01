@@ -2,14 +2,15 @@
     "name": "cloak/peridot-cloak-plugin",
     "keywords": [ "peridot", "peridot-plugin", "code coverage", "lcov report", "markdown report", "text report" ],
     "require": {
+        "php": ">=5.5.0",
         "cloak/cloak": "~1.8",
         "peridot-php/peridot": "~1.15"
     },
     "require-dev": {
         "codegyre/robo": "~0.5",
-        "cloak/robo-coveralls-kit": "~1.1",
-        "expect/peridot-expect-plugin": "~2.0",
-        "robo-peridot/robo-peridot": "~1.1",
+        "cloak/robo-coveralls-kit": "~2.1",
+        "expect/peridot-expect-plugin": "~3.0",
+        "holyshared/robo-peridot": "~2.0",
         "phpspec/prophecy": "~1.4"
     },
     "autoload" : {
