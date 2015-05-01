@@ -18,7 +18,7 @@ use Evenement\EventEmitterInterface;
 /**
  * Class CloakPlugin
  */
-class CloakPlugin implements RegistrarInterface
+class CloakPlugin implements Registrar
 {
     /**
      * @var \cloak\AnalyzerInterface
