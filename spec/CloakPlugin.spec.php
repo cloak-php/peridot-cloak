@@ -2,7 +2,7 @@
 
 use cloak\peridot\CloakPlugin;
 use cloak\peridot\Registrar;
-use cloak\AnalyzerInterface;
+use cloak\ReportableAnalyzer;
 use Evenement\EventEmitter;
 use Prophecy\Prophet;
 
@@ -34,7 +34,7 @@ describe(CloakPlugin::class, function () {
     describe('#onRunnerStart', function () {
         beforeEach(function () {
             $this->prophet = new Prophet();
-            $analyzer = $this->prophet->prophesize(AnalyzerInterface::class);
+            $analyzer = $this->prophet->prophesize(ReportableAnalyzer::class);
 
             $this->plugin = new CloakPlugin($analyzer->reveal());
             $analyzer->start()->shouldBeCalled();
@@ -50,7 +50,7 @@ describe(CloakPlugin::class, function () {
     describe('#onRunnerEnd', function () {
         beforeEach(function () {
             $this->prophet = new Prophet();
-            $analyzer = $this->prophet->prophesize(AnalyzerInterface::class);
+            $analyzer = $this->prophet->prophesize(ReportableAnalyzer::class);
 
             $this->plugin = new CloakPlugin($analyzer->reveal());
 
