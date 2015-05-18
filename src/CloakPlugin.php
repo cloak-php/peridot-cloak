@@ -10,8 +10,8 @@
  */
 namespace cloak\peridot;
 
-use cloak\Analyzer;
-use cloak\AnalyzerInterface;
+use cloak\CoverageAnalyzer;
+use cloak\ReportableAnalyzer;
 use cloak\configuration\ConfigurationLoader;
 use Evenement\EventEmitterInterface;
 
@@ -21,14 +21,14 @@ use Evenement\EventEmitterInterface;
 class CloakPlugin implements Registrar
 {
     /**
-     * @var \cloak\AnalyzerInterface
+     * @var \cloak\ReportableAnalyzer
      */
     private $analyzer;
 
     /**
-     * @param AnalyzerInterface $analyzer
+     * @param ReportableAnalyzer $analyzer
      */
-    public function __construct(AnalyzerInterface $analyzer)
+    public function __construct(ReportableAnalyzer $analyzer)
     {
         $this->analyzer = $analyzer;
     }
@@ -43,7 +43,7 @@ class CloakPlugin implements Registrar
         $loader = new ConfigurationLoader();
         $configuration = $loader->loadConfiguration($configurationFile);
 
-        $analyzer = new Analyzer($configuration);
+        $analyzer = new CoverageAnalyzer($configuration);
 
         return new self($analyzer);
     }
