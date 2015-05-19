@@ -1,18 +1,20 @@
 <?php
 
 use cloak\peridot\CloakPlugin;
-use cloak\peridot\RegistrarInterface as Registrar;
+use cloak\peridot\Registrar;
+use cloak\ReportableAnalyzer;
 use Evenement\EventEmitter;
 use Prophecy\Prophet;
 
-describe('CloakPlugin', function () {
+
+describe(CloakPlugin::class, function () {
     beforeEach(function () {
         $this->configFile = __DIR__ . '/fixture/cloak.toml';
         $this->plugin = CloakPlugin::create($this->configFile);
     });
     describe('#create', function () {
         it('returns cloak\peridot\CloakPlugin instance', function () {
-            expect($this->plugin)->toBeAnInstanceOf('cloak\peridot\CloakPlugin');
+            expect($this->plugin)->toBeAnInstanceOf(CloakPlugin::class);
         });
     });
     describe('#registerTo', function () {
@@ -32,7 +34,7 @@ describe('CloakPlugin', function () {
     describe('#onRunnerStart', function () {
         beforeEach(function () {
             $this->prophet = new Prophet();
-            $analyzer = $this->prophet->prophesize('cloak\AnalyzerInterface');
+            $analyzer = $this->prophet->prophesize(ReportableAnalyzer::class);
 
             $this->plugin = new CloakPlugin($analyzer->reveal());
             $analyzer->start()->shouldBeCalled();
@@ -48,7 +50,7 @@ describe('CloakPlugin', function () {
     describe('#onRunnerEnd', function () {
         beforeEach(function () {
             $this->prophet = new Prophet();
-            $analyzer = $this->prophet->prophesize('cloak\AnalyzerInterface');
+            $analyzer = $this->prophet->prophesize(ReportableAnalyzer::class);
 
             $this->plugin = new CloakPlugin($analyzer->reveal());
 

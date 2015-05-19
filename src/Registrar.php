@@ -17,9 +17,9 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
- * Interface RegistrarInterface
+ * Interface Registrar
  */
-interface RegistrarInterface
+interface Registrar
 {
     const START_EVENT = 'runner.start';
     const END_EVENT = 'runner.end';
