@@ -13,8 +13,6 @@ after_script:
   - composer coveralls
 matrix:
   fast_finish: true
-  allow_failures:
-    - php: hhvm-nightly
 notifications:
   email: false
 sudo: false
