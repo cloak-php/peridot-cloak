@@ -3,15 +3,15 @@
     "keywords": [ "peridot", "peridot-plugin", "code coverage", "lcov report", "markdown report", "text report" ],
     "require": {
         "php": ">=5.5.0",
-        "cloak/cloak": "~2.0",
-        "peridot-php/peridot": "~1.15"
+        "cloak/cloak": "~2.1",
+        "peridot-php/peridot": "~1.16"
     },
     "require-dev": {
-        "codegyre/robo": "~0.5",
+        "codegyre/robo": "~0.6",
         "cloak/robo-coveralls-kit": "~2.1",
         "expect/peridot-expect-plugin": "~3.0",
         "holyshared/robo-peridot": "~2.0",
-        "phpspec/prophecy": "~1.4"
+        "phpspec/prophecy": "~1.5"
     },
     "autoload" : {
         "psr-4": {
@@ -29,5 +29,6 @@
         "test": "vendor/bin/robo spec:all",
         "coveralls": "vendor/bin/robo coveralls:upload"
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
